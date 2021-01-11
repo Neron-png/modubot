@@ -4,11 +4,13 @@ from commands.pr import pr
 from commands.gags import gags
 from commands.help import help
 from commands.advice import advice
+from commands.musicroast import musicroast
+from commands.ship import ship
 
 
 
 
-command_list = ["pr", "power-ranking", "help", "advice"]
+command_list = ["pr", "power-ranking", "help", "advice", "musicroast", "ship"]
 
 # https://cdn.discordapp.com/attachments/430798390041903139/783338706789859348/t51.png
 async def command_handler(message):
@@ -25,3 +27,7 @@ async def command_handler(message):
         await help(message, general_config.prefix)
     if command == "advice":
         await advice(message, general_config.prefix)
+    if command == "musicroast":
+        await musicroast(message, general_config.prefix)
+    if command == "ship":
+        await ship(message, general_config.prefix)
